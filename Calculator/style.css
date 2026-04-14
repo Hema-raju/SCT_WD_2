@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: 0.3s;
+}
+
+/* Light Mode */
+body.light {
+  background: linear-gradient(135deg, #0ea5e9, #9333ea);
+}
+
+/* Dark Mode */
+body.dark {
+  background: #020617;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Calculator */
+.calculator {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+  color: white;
+}
+
+/* Top Bar */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Display */
+#display {
+  width: 100%;
+  height: 70px;
+  margin: 15px 0;
+  font-size: 28px;
+  text-align: right;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background: #020617;
+  color: #38bdf8;
+}
+
+/* Buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #38bdf8, #0ea5e9);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Hover */
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Click */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Equal */
+.equal {
+  grid-column: span 2;
+  background: linear-gradient(145deg, #22c55e, #16a34a);
+}
+
+/* History Panel */
+.history {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 20px;
+  width: 200px;
+  color: white;
+  overflow-y: auto;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.history li {
+  padding: 5px 0;
+  border-bottom: 1px solid #334155;
+}
+/* Button base */
+button {
+  position: relative;
+  overflow: hidden;   /* needed for ripple */
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  background: linear-gradient(145deg, #38bdf8, #0ea5e9);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+button:hover {
+  transform: scale(1.08);
+}
+
+/* Click Press Effect */
+button:active {
+  transform: scale(0.92);
+  background: #e1d82e;
+}
+
+/* Glow effect */
+button.glow {
+  box-shadow: 0 0 20px #38f8bb;
+}
+.ripple {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(5, 8, 7, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleEffect 0.6s linear;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+/* Button setup */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Water drop particles */
+.drop {
+  position: absolute;
+  width: 12px;
+height: 12px;
+ background: #2bff00;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: splash 0.6s ease-out forwards;
+}
+
+/* Splash animation */
+@keyframes splash {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0.5);
+    opacity: 0;
+  }
+}
